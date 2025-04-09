@@ -108,15 +108,15 @@ export const FontPickerList = React.memo(
               text: fontFaces[0]?.fontFace?.family ?? "Unknown",
             };
 
-            if (metadata.deprecated) {
-              Object.assign(fontDescriptor, {
-                deprecated: metadata.deprecated,
-                badge: {
-                  type: DropDownMenuItemBadgeType.RED,
-                  placeholder: t("fontList.badge.old"),
-                },
-              });
-            }
+            // if (metadata.deprecated) {
+            //   Object.assign(fontDescriptor, {
+            //     deprecated: metadata.deprecated,
+            //     badge: {
+            //       type: DropDownMenuItemBadgeType.RED,
+            //       placeholder: t("fontList.badge.old"),
+            //     },
+            //   });
+            // }
 
             return fontDescriptor as FontDescriptor;
           })
