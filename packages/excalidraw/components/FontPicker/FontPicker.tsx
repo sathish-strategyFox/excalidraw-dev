@@ -21,12 +21,6 @@ import "./FontPicker.scss";
 
 export const DEFAULT_FONTS = [
   {
-    value: FONT_FAMILY.Excalifont,
-    icon: FreedrawIcon,
-    text: t("labels.handDrawn"),
-    testId: "font-family-hand-drawn",
-  },
-  {
     value: FONT_FAMILY.Nunito,
     icon: FontFamilyNormalIcon,
     text: t("labels.normal"),

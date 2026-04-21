@@ -63,7 +63,6 @@ interface FontPickerListProps {
 
 const getFontFamilyIcon = (fontFamily: FontFamilyValues): JSX.Element => {
   switch (fontFamily) {
-    case FONT_FAMILY.Excalifont:
     case FONT_FAMILY.Virgil:
       return FreedrawIcon;
     case FONT_FAMILY.Nunito:

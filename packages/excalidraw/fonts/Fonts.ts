@@ -39,8 +39,16 @@ import { LilitaFontFaces } from "./Lilita";
 import { NunitoFontFaces } from "./Nunito";
 import { VirgilFontFaces } from "./Virgil";
 import { XiaolaiFontFaces } from "./Xiaolai";
+import { VerdonaFontFaces } from "./Verdana";
 
 import type Scene from "../scene/Scene";
+import { BodoniFontFaces } from "./Bodoni";
+import { PoppinsFontFaces } from "./poppins";
+import { OpenSansFontFaces } from "./OpenSans";
+import { TimesNewRomanFontFaces } from "./TimesNewRoman";
+import { GaramondFontFaces } from "./Garamond";
+import { AlluraFontFaces } from "./Allura";
+import { ArialFontFaces } from "./Arial";
 
 export class Fonts {
   // it's ok to track fonts across multiple instances only once, so let's use
@@ -374,16 +382,16 @@ export class Fonts {
         FONT_FAMILY[family as keyof typeof FONT_FAMILY] ??
         FONT_FAMILY_FALLBACKS[family as keyof typeof FONT_FAMILY_FALLBACKS];
 
-      // default to Excalifont metrics
+      // default to HandWritten metrics
       const metadata =
-        FONT_METADATA[fontFamily] ?? FONT_METADATA[FONT_FAMILY.Excalifont];
+        FONT_METADATA[fontFamily] ?? FONT_METADATA[FONT_FAMILY.Nunito];
 
       Fonts.register.call(fonts, family, metadata, ...fontFacesDescriptors);
     };
 
     init("Cascadia", ...CascadiaFontFaces);
     init("Comic Shanns", ...ComicShannsFontFaces);
-    init("Excalifont", ...ExcalifontFontFaces);
+    init("HandWritten", ...ExcalifontFontFaces);
     // keeping for backwards compatibility reasons, uses system font (Helvetica on MacOS, Arial on Win)
     init("Helvetica", ...HelveticaFontFaces);
     // used for server-side pdf & png export instead of helvetica (technically does not need metrics, but kept in for consistency)
@@ -391,6 +399,14 @@ export class Fonts {
     init("Lilita One", ...LilitaFontFaces);
     init("Nunito", ...NunitoFontFaces);
     init("Virgil", ...VirgilFontFaces);
+    init("Verdana", ...VerdonaFontFaces);
+    init("Bodoni", ...BodoniFontFaces);
+    init("Poppins", ...PoppinsFontFaces);
+    init("Open Sans", ...OpenSansFontFaces);
+    init("Times New Roman", ...TimesNewRomanFontFaces);
+    init("Garamond", ...GaramondFontFaces);
+    init("Allura", ...AlluraFontFaces);
+    init("Arial", ...ArialFontFaces);
 
     // fallback font faces
     init(CJK_HAND_DRAWN_FALLBACK_FONT, ...XiaolaiFontFaces);

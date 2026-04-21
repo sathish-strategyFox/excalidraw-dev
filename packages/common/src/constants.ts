@@ -136,11 +136,19 @@ export const FONT_FAMILY = {
   Helvetica: 2,
   Cascadia: 3,
   // leave 4 unused as it was historically used for Assistant (which we don't use anymore) or custom font (Obsidian)
-  Excalifont: 5,
+  HandWritten: 5,
   Nunito: 6,
   "Lilita One": 7,
   "Comic Shanns": 8,
   "Liberation Sans": 9,
+  Verdana: 10,
+  Bodoni: 11,
+  Poppins: 12,
+  "Open Sans": 13,
+  "Times New Roman": 14,
+  Garamond: 15,
+  Allura: 16,
+  Arial: 17,
 };
 
 export const FONT_FAMILY_FALLBACKS = {
@@ -152,7 +160,7 @@ export const getFontFamilyFallbacks = (
   fontFamily: number,
 ): Array<keyof typeof FONT_FAMILY_FALLBACKS> => {
   switch (fontFamily) {
-    case FONT_FAMILY.Excalifont:
+    case FONT_FAMILY.Nunito:
       return [CJK_HAND_DRAWN_FALLBACK_FONT, WINDOWS_EMOJI_FALLBACK_FONT];
     default:
       return [WINDOWS_EMOJI_FALLBACK_FONT];
@@ -182,7 +190,7 @@ export const FRAME_STYLE = {
 
 export const MIN_FONT_SIZE = 1;
 export const DEFAULT_FONT_SIZE = 20;
-export const DEFAULT_FONT_FAMILY: FontFamilyValues = FONT_FAMILY.Excalifont;
+export const DEFAULT_FONT_FAMILY: FontFamilyValues = FONT_FAMILY.Nunito;
 export const DEFAULT_TEXT_ALIGN = "left";
 export const DEFAULT_VERTICAL_ALIGN = "top";
 export const DEFAULT_VERSION = "{version}";
